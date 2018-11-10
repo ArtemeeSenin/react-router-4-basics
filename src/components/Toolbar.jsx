@@ -1,4 +1,5 @@
 import React from 'react';
+import ToolbarLink from './ToolbarLink'
 
 function Toolbar({ user }) {
     return (
@@ -7,16 +8,16 @@ function Toolbar({ user }) {
                 <section className="mdc-toolbar__section mdc-toolbar__section--align-start">
                     <span className="mdc-toolbar__title">Библиотека</span>
                 </section>
-                
+
                 <section className="mdc-toolbar__section mdc-toolbar__section--align-end">
                     <nav className="mdc-tab-bar">
-                        <a href="/" className="mdc-tab">Главная</a>
-                        <a href="/about" className="mdc-tab">О проекте</a>
-                        <a href="/books" className="mdc-tab">Книги</a>
+                        <ToolbarLink to="/" exact>Главная</ToolbarLink>
+                        <ToolbarLink to="/about">О проекте</ToolbarLink>
+                        <ToolbarLink to="/books">Книги</ToolbarLink>
                         {user ?
-                            <a href="/logout" className="mdc-tab">Выйти</a>
+                            <ToolbarLink to="/logout">Выйти</ToolbarLink>
                             :
-                            <a href="/login" className="mdc-tab">Войти</a>
+                            <ToolbarLink to="/login">Войти</ToolbarLink>
                         }
                     </nav>
                 </section>
